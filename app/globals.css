@@ -2,32 +2,299 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+header {
+    text-align: center;
+    height: 60px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    background: #202122;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: white;
+    justify-content: space-between;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+header div.right {
+    display: flex;
+    gap: 10px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+div.center {
+    display: flex;
+    padding-right: 30px;
+    padding-left: 40px;
+    justify-content: space-between;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+div.center a {
+    padding-left: 30px;
+}
+
+div.right {
+    gap: 30px;
+}
+
+div.right h4 a:last-child() {
+    border-radius: 20px;
+}
+
+div.spotlight {
+    height: 500px;
+    background-image: url("./img/train-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.spotlight h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.spotlight p {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Login.module.css */
+.darkSection {
+    color: white;
+    background-color: #222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.darkCard {
+    width: 500px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.darkForm {
+    margin-top: 20px;
+}
+
+.darkInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.darkSubmit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.darkSubmit:hover {
+    background-color: #0056b3;
+}
+
+.darkLink {
+    color: #007bff;
+}
+
+.footer {
+    background-color: #161B1C;
+    padding: 30px 0;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {}
+
+.grid-cols-1 h3 {
+    margin: 0;
+    height: 20px;
+}
+
+.grid-cols-2 {
+    display: flex;
+    gap: 400px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+div {
+    color: white;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.contact-info a {
+    color: white;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.address {}
+
+.text-right {
+    text-align: right;
+}
+
+.terms {
+
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 14px;
+    display: flex;
+}
+
+.terms a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    a.music {
+        width: 50%;
+        height: 60%;
+    }
+}
+
+.danger :hover() {
+    color: red;
+}
+
+.green :hover() {
+    color: green;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+    .dark-card {
+        max-width: 80%;
+        /* Adjust card width for smaller screens */
+    }
+
+    .dark-input {
+        width: 100%;
+        /* Make input fields full width on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dark-card {
+        padding: 10px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .dark-card h2 {
+        font-size: 1.2rem;
+        /* Decrease heading font size */
+    }
+
+    .dark-form label,
+    .dark-form p {
+        font-size: 0.9rem;
+        /* Decrease label and paragraph font size */
+    }
+
+    .dark-submit {
+        font-size: 0.9rem;
+        /* Decrease submit button font size */
+    }
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+    .dark-card {
+        max-width: 80%;
+        /* Adjust card width for smaller screens */
+    }
+
+    .dark-input {
+        width: 100%;
+        /* Make input fields full width on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dark-card {
+        padding: 10px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .dark-card h2 {
+        font-size: 1.2rem;
+        /* Decrease heading font size */
+    }
+
+    .dark-form label,
+    .dark-form p {
+        font-size: 0.9rem;
+        /* Decrease label and paragraph font size */
+    }
+
+                                .dark-submit {
+                                    font-size: 0.9rem;
+                                    /* Decrease submit button font size */
+                                }
+}
+
+/* Add responsive styles for Dashboard */
+@media screen and (max-width: 768px) {
+    .dark-card {
+        max-width: 80%;
+        /* Adjust card width for smaller screens */
+    }
+
+    .dark-input {
+        width: 100%;
+        /* Make input fields full width on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dark-card {
+        padding: 10px;
+        /* Reduce padding for smaller screens */
+    }
+
+        .dark-card h2 {
+            font-size: 1.2rem;
+            /* Decrease heading font size */
+        }
 }
