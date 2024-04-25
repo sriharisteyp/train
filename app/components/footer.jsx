@@ -12,10 +12,8 @@ const Footer = () => {
                     <div className="footer-links">
                         <h3>Company</h3>
                         <ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="/about">About Us</a></li>
                             <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Places</a></li>
-                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                     <div className="grid grid-cols-1">

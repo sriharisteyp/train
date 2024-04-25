@@ -8,7 +8,7 @@ const Register = () => {
             <section className="darkSection">
                 <section className="darkCard">
                     <h2>Register</h2>
-                    <p>Welcome to use Fata Places</p>
+                    <p>Welcome to use RouteMinder</p>
                     <form className="darkForm">
                         <label htmlFor="username">Username :</label>
                         <input
