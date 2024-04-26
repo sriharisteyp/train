@@ -1,5 +1,4 @@
 "use client";
-import sri from "../img/sri.jpg"
 import Header from "../components/header";
 import Footer from "../components/footer"
 
@@ -19,7 +18,7 @@ const About = () => {
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <img src="{../img/sri.jpg}" alt="" className="a" />
+                        <img src="" alt="" className="a" />
                         <div class="container">
                             <h2>Dishna</h2>
                             <p class="title">CEO & Founder</p>
