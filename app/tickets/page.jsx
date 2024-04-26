@@ -1,120 +1,138 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import Header from "../components/header";
+import Footer from "../components/footer";
+import { useState } from 'react';
 
-const MovieBooking = () => {
-    const [amount, setAmount] = useState(0);
+const TrainBookingPage = () => {
+    const [formData, setFormData] = useState({
+        departureStation: '',
+        destinationStation: '',
+        date: '',
+        passengers: 1,
+    });
 
-    useEffect(() => {
-        const seats = document.querySelectorAll('.all-seats input');
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here
+        console.log(formData);
+    };
 
-        const handleChange = (event) => {
-            let newAmount = amount;
-            let newCount = Number(document.querySelector('.count').innerHTML);
-
-            if (event.target.checked) {
-                newCount += 1;
-                newAmount += 200;
-            } else {
-                newCount -= 1;
-                newAmount -= 200;
-            }
-
-            setAmount(newAmount);
-            document.querySelector('.count').innerHTML = newCount;
-            document.querySelector('.amount').innerHTML = newAmount;
-        };
-
-        seats.forEach((seat) => {
-            seat.addEventListener('change', handleChange);
-        });
-
-        // Cleanup function to remove event listeners
-        return () => {
-            seats.forEach((seat) => {
-                seat.removeEventListener('change', handleChange);
-            });
-        };
-    }, [amount]); // Include 'amount' as a dependency to ensure the effect runs when 'amount' changes
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
     return (
-        <div class="center">
-            <div class="tickets">
-                <div class="ticket-selector">
-                    <div class="head">
-                        <div class="title">Movie Name</div>
-                    </div>
-                    <div class="seats">
-                        <div class="status">
-                            <div class="item">Available</div>
-                            <div class="item">Booked</div>
-                            <div class="item">Selected</div>
-                        </div>
-                        <div class="all-seats">
-                            <input type="checkbox" name="tickets" id="s1" />
-                            <label for="s1" class="seat booked"></label>
-                        </div>
-                    </div>
-                    <div class="timings">
-                        <div class="dates">
-                            <input type="radio" name="date" id="d1" checked />
-                            <label for="d1" class="dates-item">
-                                <div class="day">Sun</div>
-                                <div class="date">11</div>
-                            </label>
-                            <input type="radio" id="d2" name="date" />
-                            <label class="dates-item" for="d2">
-                                <div class="day">Mon</div>
-                                <div class="date">12</div>
-                            </label>
-                            <input type="radio" id="d3" name="date" />
-                            <label class="dates-item" for="d3">
-                                <div class="day">Tue</div>
-                                <div class="date">13</div>
-                            </label>
-                            <input type="radio" id="d4" name="date" />
-                            <label class="dates-item" for="d4">
-                                <div class="day">Wed</div>
-                                <div class="date">14</div>
-                            </label>
-                            <input type="radio" id="d5" name="date" />
-                            <label class="dates-item" for="d5">
-                                <div class="day">Thu</div>
-                                <div class="date">15</div>
-                            </label>
-                            <input type="radio" id="d6" name="date" />
-                            <label class="dates-item" for="d6">
-                                <div class="day">Fri</div>
-                                <div class="date">16</div>
-                            </label>
-                            <input type="radio" id="d7" name="date" />
-                            <label class="dates-item" for="d7">
-                                <div class="day">Sat</div>
-                                <div class="date">17</div>
-                            </label>
-                        </div>
-                        <div class="times">
-                            <input type="radio" name="time" id="t1" checked />
-                            <label for="t1" class="time">11:00</label>
-                            <input type="radio" id="t2" name="time" />
-                            <label for="t2" class="time"> 14:30 </label>
-                            <input type="radio" id="t3" name="time" />
-                            <label for="t3" class="time"> 18:00 </label>
-                            <input type="radio" id="t4" name="time" />
-                            <label for="t4" class="time"> 21:30 </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="price">
-                    <div class="total">
-                        <span> <span class="count">0</span> Tickets </span>
-                        <div class="amount">0</div>
-                    </div>
-                    <button type="button">Book</button>
-                </div>
+        <>
+            <Header />
+            <div className="m">
+                <div className="train-booking">
+                    <h1 className="title">Show Train</h1>
+                    <form onSubmit={handleSubmit} className="booking-form">
+                        <label className="form-label">
+                            Departure Station:
+                            <input
+                                type="text"
+                                name="departureStation"
+                                value={formData.departureStation}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </label>
+                        <label className="form-label">
+                            Destination Station:
+                            <input
+                                type="text"
+                                name="destinationStation"
+                                value={formData.destinationStation}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </label>
+                        <label className="form-label">
+                            Date:
+                            <input
+                                type="date"
+                                name="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </label>
+                        <label className="form-label">
+                            Passengers:
+                            <input
+                                type="number"
+                                name="passengers"
+                                value={formData.passengers}
+                                onChange={handleChange}
+                                className="form-input"
+                            />
+                        </label>
+                        <button type="submit" className="submit-button">Show Train</button>
+                    </form>
             </div>
+
+                <style jsx>{`
+body{
+    linear-gradient(to bottom right, #4e54c8, #8f94fb);
+}
+.m{
+    background: linear-gradient(to right, #ff8a00, #da1b60);
+  padding: 20px
+}
+.train-booking {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #007bff, #5bc0de, #28a745);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color:white;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 10px;
+}
+
+.form-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: linear-gradient(to bottom right, #007bff, #5bc0de, #28a745);
+  outline:none;
+  border-bottom:1px solid black;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+            `}</style>
         </div>
+            <Footer />
+        </>
     );
 };
 
-export default MovieBooking;
+export default TrainBookingPage;

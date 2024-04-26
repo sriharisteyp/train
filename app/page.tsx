@@ -1,6 +1,6 @@
 import Header from "./components/header";
-import Spotlight from "./components/spotlight";
 import Footer from "./components/footer";
+import Spotlight from "./components/spotlight";
 import Contact from "./components/contact";
 
 const IndexPage = () => {

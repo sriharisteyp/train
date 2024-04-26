@@ -564,7 +564,6 @@ html {
 .about-section {
     padding: 50px;
     text-align: center;
-    background-color: #474e5d;
     color: white;
 }
 
@@ -601,7 +600,6 @@ html {
 
 .o {
     text-align: center;
-    background: #474E5D;
     font-size: 30px;
     color: white;
 }
@@ -615,7 +613,14 @@ html {
 }
 
 .row {
-    background: #474E5D;
+}
+
+input {
+    display: block;
+}
+
+.bg {
+    background: linear-gradient(to bottom right, #007bff, #5bc0de, #28a745);
 }
 
 @media screen and (max-width: 650px) {

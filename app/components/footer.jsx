@@ -23,12 +23,12 @@ const Footer = () => {
                         </p>
                     </div>
                 </div>
-                <div className="text-center">
+                <div className="text-3x">
 
-                    <p className="terms">
-                        <p className="copyright">c 2024, Hleta Private Limited. All rights reserved</p>
+                    <div className="terms text-3x text-center">
+                        <p className="copyright">&copy; 2024, RouteMinder Private Limited. All rights reserved</p>
                         <a href="#">Terms of Service</a> | <a href="/PrivacyPolicy">Privacy Policy</a>
-                    </p>
+                    </div>
                 </div>
             </div>
         </footer>

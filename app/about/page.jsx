@@ -1,9 +1,11 @@
+"use client";
+import sri from "../img/sri.jpg"
 import Header from "../components/header";
 import Footer from "../components/footer"
 
 const About = () => {
     return (
-        <>
+        <div className="bg">
             <Header />
             <div class="about-section">
                 <h1 className="h1">About Us</h1>
@@ -17,9 +19,9 @@ const About = () => {
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <img src="https://www.bing.com/images" alt="Jane" className="a" />
+                        <img src="{../img/sri.jpg}" alt="" className="a" />
                         <div class="container">
-                            <h2>Jane Doe</h2>
+                            <h2>Dishna</h2>
                             <p class="title">CEO & Founder</p>
                             <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                             <p>jane@example.com</p>
@@ -32,8 +34,8 @@ const About = () => {
                     <div class="card">
                         <img src="/w3images/team2.jpg" alt="Mike" className="a" />
                         <div class="container">
-                            <h2>Mike Ross</h2>
-                            <p class="title">Art Director</p>
+                            <h2>Sri Hari</h2>
+                            <p class="title">CTO & Founder</p>
                             <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                             <p>mike@example.com</p>
                             <p><button class="button">Contact</button></p>
@@ -46,7 +48,7 @@ const About = () => {
                         <img src="/w3images/team3.jpg" alt="John" className="a" />
                         <div class="container">
                             <h2>John Doe</h2>
-                            <p class="title">Designer</p>
+                            <p class="title">COO & Co-Founder</p>
                             <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                             <p>john@example.com</p>
                             <p><button class="button">Contact</button></p>
@@ -96,7 +98,7 @@ const About = () => {
             </div>
             <Footer />
 
-        </>
+        </div>
     );
 }
 

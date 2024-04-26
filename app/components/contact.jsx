@@ -26,7 +26,7 @@ const ContactPage = () => {
                         Contact
                     </h2>
                     <p>email <a href="mailto:hello@SparkTech.com">hello@SparkTech.com</a></p>
-                    <p>Phone <a href="">123-4567-890</a></p>
+            <p>Phone <a href="tel:1234567890">+91 123-4567-890</a></p>
                 </div>
                 <form>
                     <label htmlFor="name">Name:</label>
